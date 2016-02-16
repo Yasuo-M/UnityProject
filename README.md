@@ -1,4 +1,4 @@
 素材利用  
-◎Unityちゃん
+◎Unityちゃん  
 © Unity Technologies Japan/UCL
 
