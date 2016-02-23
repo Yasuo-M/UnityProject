@@ -33,7 +33,7 @@ public static class ExportAssetBundles {
 		string targetStr = "Android";
 		if (string.IsNullOrEmpty(targetStr) || !_targets.ContainsKey(targetStr)) {
 			Debug.LogError("target is invalid! "+TARGET_PARAME+"iOS or "+TARGET_PARAME+"Android");
-			//EditorApplication.Exit(1);
+			EditorApplication.Exit(1);
 			return;
 		}
 
@@ -50,7 +50,7 @@ public static class ExportAssetBundles {
 		var manifest = BuildPipeline.BuildAssetBundles(exportDir, BuildAssetBundleOptions.IgnoreTypeTreeChanges, target);
 
 		// 命名規則を統一するためにSingleManifestのファイル名を変更
-		if (manifest != null) {
+		/*if (manifest != null) {
 			var spl = exportDir.Split('/');
 			var folderName = spl[spl.Length - 1];
 			var currentPath = exportDir + "/" +  folderName;
@@ -63,9 +63,10 @@ public static class ExportAssetBundles {
 				}
 				newPath += ".unity3d";
 				File.Delete(newPath);
+				Debug.Log ("newPath==="+newPath);
 				File.Move(currentPath, newPath);
 			}
-		}
+		}*/
 	}
 
 	private static string[] GetParameterArgumentArray(string parameterName)
