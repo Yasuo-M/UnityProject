@@ -14,20 +14,10 @@ public class StartUGUI : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		AssetBundleLoadManager.LoadStart ("http://192.168.0.95:80/Android/chara.unity3d", "", (obj)=>{
+		AssetBundleLoadManager.LoadStart ("http://192.168.0.101:80/Android/chara.unity3d", "", (obj)=>{
 			AssetBundle bundle = obj as AssetBundle;
 			Debug.Log("obj===:"+obj.name);
-			_image_obj.sprite = bundle.LoadAssetWithSubAssets<Sprite>("unitychan1")[0];
-		});
-		AssetBundleLoadManager.LoadStart ("http://192.168.0.95:80/Android/chara.unity3d", "", (obj)=>{
-			AssetBundle bundle = obj as AssetBundle;
-			Debug.Log("obj===:"+obj.name);
-			_image_obj2.sprite = bundle.LoadAssetWithSubAssets<Sprite>("unitychan2")[0];
-		});
-		AssetBundleLoadManager.LoadStart ("http://192.168.0.95:80/Android/chara.unity3d", "", (obj)=>{
-			AssetBundle bundle = obj as AssetBundle;
-			Debug.Log("obj===:"+obj.name);
-			_image_obj3.sprite = bundle.LoadAssetWithSubAssets<Sprite>("unitychan3")[0];
+			Instantiate(bundle.LoadAsset("aaaa"));
 		});
 	}
 	

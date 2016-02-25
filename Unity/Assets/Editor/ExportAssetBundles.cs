@@ -47,7 +47,7 @@ public static class ExportAssetBundles {
 
 		SetAssetBundleNameForAll ();
 
-		var manifest = BuildPipeline.BuildAssetBundles(exportDir, BuildAssetBundleOptions.IgnoreTypeTreeChanges, target);
+		var manifest = BuildPipeline.BuildAssetBundles(exportDir, BuildAssetBundleOptions.IgnoreTypeTreeChanges | BuildAssetBundleOptions.ChunkBasedCompression, target);
 
 		// 命名規則を統一するためにSingleManifestのファイル名を変更
 		/*if (manifest != null) {
