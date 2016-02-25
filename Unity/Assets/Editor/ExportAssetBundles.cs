@@ -7,7 +7,7 @@ using System.Linq;
 
 public static class ExportAssetBundles {
 
-	public const string RESOURCE_PATH = "Assets/Resources/AssetBundleResource";
+	public const string RESOURCE_PATH = "Assets/image";
 
 	const string TARGET_PARAME = "-Assets/Resources/AssetBundleResource=";
 	const string EXPORT_DIR = "-Assets/Resources/AssetBundleResource=";
@@ -104,7 +104,7 @@ public static class ExportAssetBundles {
 		if (assetBundleName != newName) {
 			var obj = AssetDatabase.LoadAssetAtPath<Object>(path);
 			// •’•©•Î•¿§Úèé§Ø
-			if (obj.GetType() == typeof(DefaultAsset)) {
+			if (obj.GetType() != typeof(DefaultAsset)) {
 				return;
 			}
 			if (newName != newName.ToLower()) {
